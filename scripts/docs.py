@@ -138,7 +138,8 @@ def build_lang(
         dist_path: Path = site_path / lang
     shutil.rmtree(build_lang_path, ignore_errors=True)
     shutil.copytree(lang_path, build_lang_path)
-    shutil.copytree(en_docs_path / "data", build_lang_path / "data")
+    if lang != "en":
+        shutil.copytree(en_docs_path / "data", build_lang_path / "data")
     overrides_src = en_docs_path / "overrides"
     overrides_dest = build_lang_path / "overrides"
     for path in overrides_src.iterdir():
