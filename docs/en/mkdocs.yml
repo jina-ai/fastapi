@@ -211,6 +211,8 @@ extra:
 extra_css:
 - css/termynal.css
 - css/custom.css
+- css/qabot.css
 extra_javascript:
 - js/termynal.js
 - js/custom.js
+- https://jina-docqa-ui.netlify.app/dist/qabot.js
