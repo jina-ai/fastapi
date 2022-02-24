@@ -8,6 +8,8 @@ qa-bot[theme="follow"] {
   --qabot-color-action-contrast: var(--md-code-bg-color);
   --qabot-color-muted: var(--md-default-fg-color--light);
   --qabot-color-dimmed: var(--md-code-bg-color);
+
+  --qabot-color-card-header-background: var(--md-primary-fg-color);
 }
 qa-bot:not(:defined) {
   display: none;
