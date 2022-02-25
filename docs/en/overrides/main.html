@@ -61,3 +61,30 @@
   </div>
 </div>
 {% endblock %}
+{%- block content %}
+    {{ super() }}
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('qa-bot').forEach((x) => {
+          x.addEventListener('keydown', (event) => {
+            event.stopPropagation();
+          });
+        });
+      });
+    </script>
+    <qa-bot 
+      server="https://tiangolo-fastapi.docsqa.jina.ai"
+      theme="follow" 
+      title="FastAPI Docs Bot"
+      description="@tiangolo"
+    >
+      <template>
+          <dl>
+              <dt>You can ask questions about FastAPI. Try</dt>
+              <dd>What is FastAPI?</dd>
+              <dd>What is FastAPI speed?</dd>
+              <dd>Why should we use FastAPI over other frameworks?</dd>
+          </dl>
+      </template>
+    </qa-bot>
+{%- endblock %}

@@ -11,9 +11,6 @@ qa-bot[theme="follow"] {
 
   --qabot-color-card-header-background: var(--md-primary-fg-color);
 }
-qa-bot:not(:defined) {
-  display: none;
-}
 
 qa-bot {
   font-size: 0.8rem;

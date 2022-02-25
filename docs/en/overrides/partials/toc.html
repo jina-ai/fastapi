@@ -51,28 +51,4 @@
     </ul>
   {% endif %}
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('qa-bot').forEach((x) => {
-        x.addEventListener('keydown', (event) => {
-          event.stopPropagation();
-        });
-      });
-    });
-  </script>
-  <qa-bot 
-    server="https://tiangolo-fastapi.docsqa.jina.ai"
-    theme="follow"
-    target="_blank"
-    title="FastAPI Docs Bot"
-    description="@tiangolo"
-  >
-    <dl>
-      <dt>You can ask questions about FastAPI. Try</dt>
-      <dd>What is FastAPI?</dd>
-      <dd>How do I use FastAPI?</dd>
-      <dd>Does FastAPI support my language?</dd>
-    </dl>
-  </qa-bot>
-
 </nav>
