@@ -62,37 +62,28 @@
 </div>
 {% endblock %}
 {%- block scripts %}
-    {{ super() }}
-    <script src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
-    <script>
-      // This prevents the global search interfere with qa-bot internal text input.
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('qa-bot').forEach((x) => {
-          x.addEventListener('keydown', (event) => {
-            event.stopPropagation();
-          });
-        });
-      });
-    </script>
-    <style>
-      /* This fixes content overflow issue on small screens */
-      body {
-          overflow: hidden;
-      }
-    </style>
-    <qa-bot 
-      server="https://tiangolo-fastapi.docsqa.jina.ai"
-      theme="infer" 
-      title="FastAPI Docs Bot"
-      description="@tiangolo"
-    >
-      <template>
-          <dl>
-              <dt>You can ask questions about FastAPI. Try</dt>
-              <dd>What is FastAPI?</dd>
-              <dd>What is FastAPI speed?</dd>
-              <dd>Why should we use FastAPI over other frameworks?</dd>
-          </dl>
-      </template>
-    </qa-bot>
+{{ super() }}
+<script src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
+<style>
+  /* This fixes content overflow issue on small screens */
+  body {
+      overflow: hidden;
+  }
+</style>
+<qa-bot 
+  server="https://tiangolo-fastapi.docsqa.jina.ai"
+  theme="infer" 
+  title="FastAPI Docs Bot"
+  description="@tiangolo"
+  style="font-size: 0.8rem"
+>
+  <template>
+      <dl>
+          <dt>You can ask questions about FastAPI. Try</dt>
+          <dd>What is FastAPI?</dd>
+          <dd>What is FastAPI speed?</dd>
+          <dd>Why should we use FastAPI over other frameworks?</dd>
+      </dl>
+  </template>
+</qa-bot>
 {%- endblock %}
