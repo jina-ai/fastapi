@@ -64,6 +64,15 @@
 {%- block scripts %}
 {{ super() }}
 <script src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("qa-bot").forEach((x) => {
+          x.addEventListener("keydown", (event) => {
+              event.stopPropagation();
+          });
+      });
+  });
+</script>
 <style>
   /* This fixes content overflow issue on small screens */
   body {
