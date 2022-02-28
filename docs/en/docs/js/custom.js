@@ -178,8 +178,3 @@ async function main() {
 }
 
 main()
-
-if (!('fragmentDirective' in Location.prototype) &&
-    !('fragmentDirective' in document)) {
-    import('https://cdn.jsdelivr.net/npm/text-fragments-polyfill');
-}

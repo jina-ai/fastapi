@@ -63,7 +63,9 @@
 {% endblock %}
 {%- block scripts %}
     {{ super() }}
+    <script src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
     <script>
+      // This prevents the global search interfere with qa-bot internal text input.
       document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('qa-bot').forEach((x) => {
           x.addEventListener('keydown', (event) => {
@@ -73,13 +75,14 @@
       });
     </script>
     <style>
+      /* This fixes content overflow issue on small screens */
       body {
           overflow: hidden;
       }
     </style>
     <qa-bot 
       server="https://tiangolo-fastapi.docsqa.jina.ai"
-      theme="follow" 
+      theme="infer" 
       title="FastAPI Docs Bot"
       description="@tiangolo"
     >
